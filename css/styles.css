@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background-color: #FFE8D6 !important;
+    background-color: #181818 !important;
     font-family: 'Open Sans', sans-serif !important;
 }
 
@@ -21,9 +21,9 @@ body {
 }
 
 .hero {
-    background-color: #B7B7A4;
+    background-color: #FFFFFF   ;
 }
 
 .navbar-custom {
-    background-color: #B7B7A4;
+    background-color: #FFFFFF;
 }
