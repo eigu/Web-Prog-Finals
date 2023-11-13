@@ -3,7 +3,7 @@
   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta charset="UTF-8">
-      <title>Kape Para Sayo!</title>
+      <title>Kape Para Sayo</title>
       <link rel="icon" type="image/x-icon" href="assets/icon_01.png">    
 
       <link rel="stylesheet" href="css/styles.css">
@@ -52,7 +52,7 @@
         </div>
 
         <div class="col-2 collapse navbar-collapse text-center justify-content-end" id="navbarCollapse">
-          <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='login.html'">Login</button>
+          <button type="button" class="btn btn-outline-dark me-2" onclick="location.href='login.html'">Login</button>
         </div>
       </div>  
     </nav>
@@ -60,26 +60,27 @@
     <main class="container-fluid p-0">
       <div id="home" class="container d-flex flex-column min-vh-100 justify-content-md-start align-items-center">
         <div class="row p-0 align-items-center rounded-3 shadow-lg w-75 my-auto hero">
-            <div class="col-lg-7 p-3 p-lg-5">  <h2>Filter Anything</h2>
-                <p>Type something in the input field to search for a specific text inside the div element with id="myDIV":</p>
-                <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                <div id="myDIV">
-                    <p>I am a paragraph.</p>
-                    <div>I am a div element inside div.</div>
-                    <button class="btn">I am a button</button>
-                    <button class="btn btn-info">Another button</button>
-                    <p>Another paragraph.</p>
-              
-                    <div class="col-sm-4" style="background-color:lavender;"> 
-                      <img class="toast_item" src="assets/food1.jpg" alt="Coffee Shop" style="width:100%;">toast
-                    </div>
-                    <div class="col-sm-4" style="background-color:lavenderblush;"> 
-                      <img class="coffee_item" src="assets/coffee.jpg" alt="Coffee Shop" style="width:100%;">coffee
-                    </div>
-                    <div class="col-sm-4" style="background-color:lavender;">
-                        <img class="table_item" src="assets/carousel2.jpg" alt="Coffee Shop" style="width:100%;">table
-                    </div>
+            <div class="col-lg-7 p-3 p-lg-5"> 
+              <h2>Filter Anything</h2>
+              <input class="form-control" id="myInput" type="text" placeholder="Search..">
+          
+            
+              <div id="myDIV" class="col-md-4"style="background-color:lavender;">
+                  <img src="assets/food1.jpg" alt="Toast" class="img-responsive">
+                  <figcaption>toast</figcaption>
+          
                 </div>
+                <div id="myDIV" class="col-md-4" style="background-color:lavenderblush;">
+                  <img src="assets/coffee.jpg" alt="Coffee" class="img-responsive">
+                  <figcaption>coffee</figcaption>
+          
+                </div>
+                <div id="myDIV" class="col-md-4" style="background-color:lavender;">
+                  <img src="assets/carousel2.jpg" alt="table" class="img-responsive">
+                  <figcaption>table</figcaption>
+          
+                </div>
+              </div>
             </div>
         </div>
       </div>
@@ -87,9 +88,9 @@
       <footer class="py-3">
         <div class="container d-flex justify-content-center align-items-center">
           <div class="row row-cols-1">
-            <div class="col">
+            <div class="col d-flex justify-content-center">
               <a href="index.html#home">
-                <img class="rounded-lg-3 d-block mx-auto" style="height: 48px;" src="assets/logo_01.png" alt="">
+                <img class="rounded-lg-3" style="height: 48px;" src="assets/logo_01.png" alt="">
               </a>
             </div>
             <p class="col mb-0 text-body-secondary text-center">© 2023 Kape Para Sayo</p>
@@ -99,23 +100,22 @@
     </main>
       
     <script>
-        $(document).ready(function(){
-          $("#myInput").on("keyup", function() {
-            //checks if the search field is empty or not
-              var value = $(this).val();
-        
-              //Filters through the myDIV
-              $("#myDIV *").filter(function() {
-              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        
-            //Filters through the img tags with specific name classes
-              var imgs = $("[class*='"+value+"' i]");
-              imgs.show();
-        
-            
-          });
-        });
+      $(document).ready(function() {
+        $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myDIV *").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+      $("#myDIV img").each(function() {
+          var alt = $(this).attr("alt").toLowerCase();
+          if (alt.includes(value)) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        })
+      });
+    });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
