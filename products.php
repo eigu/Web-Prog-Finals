@@ -58,7 +58,7 @@
     </nav>
       
     <main class="container-fluid p-0">
-      <div id="home" class="container d-flex flex-column justify-content-md-start align-items-center">
+      <div id="home" class="container d-flex flex-column min-vh-100 justify-content-md-start align-items-center">
         <div class="row p-0 align-items-center rounded-3 shadow-lg w-75 my-auto hero">
           <div class="col-lg-7 p-3 p-lg-5"> 
             <div class="col pb-4">
