@@ -4,7 +4,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta charset="UTF-8">
       <title>Kape Para Sayo</title>
-      <link rel="icon" type="image/x-icon" href="assets/icon_01.png">    
+      <link rel="icon" type="image/x-icon" href="assets/logo/icon_01.png">    
 
       <link rel="stylesheet" href="css/styles.css">
       <script src="js/scripts.js"></script>
@@ -13,11 +13,11 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-custom navbar-expand-lg fixed-top navbar shadow">
+    <nav class="navbar navbar-custom navbar-expand-lg fixed-top navbar shadow-lg">
       <div class="container d-flex justify-content-between">
         <div class="col-lg-2 col d-flex justify-content-between justify-content-lg-start align-items-center">
           <a class="navbar-brand" href="index.html#home">
-            <img class="rounded-lg-3 d-block" style="height: 48px;" src="assets/logo_01.png" alt="">
+            <img class="rounded-lg-3 d-block" style="height: 48px;" src="assets/logo/logo_01.png" alt="">
           </a>
           
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,45 +52,62 @@
         </div>
 
         <div class="col-2 collapse navbar-collapse text-center justify-content-end" id="navbarCollapse">
-          <button type="button" class="btn btn-outline-dark me-2" onclick="location.href='login.html'">Login</button>
+          <button type="button" class="btn btn-outline-dark me-2" onclick="location.href='login.php'">Login</button>
         </div>
       </div>  
     </nav>
       
     <main class="container-fluid p-0">
-      <div id="home" class="container d-flex flex-column min-vh-100 justify-content-md-start align-items-center">
+      <div id="home" class="container d-flex flex-column justify-content-md-start align-items-center">
         <div class="row p-0 align-items-center rounded-3 shadow-lg w-75 my-auto hero">
-            <div class="col-lg-7 p-3 p-lg-5"> 
+          <div class="col-lg-7 p-3 p-lg-5"> 
+            <div class="col pb-4">
               <h2>Filter Anything</h2>
               <input class="form-control" id="myInput" type="text" placeholder="Search..">
-          
-            
-              <div id="myDIV" class="col-md-4"style="background-color:lavender;">
-                  <img src="assets/food1.jpg" alt="Toast" class="img-responsive">
-                  <figcaption>toast</figcaption>
-          
-                </div>
-                <div id="myDIV" class="col-md-4" style="background-color:lavenderblush;">
-                  <img src="assets/coffee.jpg" alt="Coffee" class="img-responsive">
-                  <figcaption>coffee</figcaption>
-          
-                </div>
-                <div id="myDIV" class="col-md-4" style="background-color:lavender;">
-                  <img src="assets/carousel2.jpg" alt="table" class="img-responsive">
-                  <figcaption>table</figcaption>
-          
-                </div>
-              </div>
             </div>
+        
+          
+            <div class="row row-cols-3 g-3">  
+              <?php
+              // database connection code
+              $con = mysqli_connect('localhost', 'root', '','online_store');
+
+              // database insert SQL code
+              $sql = "SELECT * FROM products";
+
+              $result = $con->query($sql);
+
+              if ($result->num_rows > 0) {
+              // output data of each row
+              while($row = $result->fetch_assoc()) {
+                echo '<div class="col">';
+                echo '<div class="card">';
+                echo '<img src="assets/products/'.$row["image"].'.jpg" />';
+                echo '<div class="card-body">';
+                echo '<h5 class="card-title">'.$row["itemname"].'</h5>';
+                echo '<p class="card-text">'.$row["description"].'</p>';
+                echo '<p class="qty">'.$row["quantity"].'</p>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+              }
+              } else {
+              echo "0 results";
+              }
+              $con->close();
+              ?>
+            </div>
+
+          </div>
         </div>
       </div>
 
-      <footer class="py-3">
+      <footer class="py-3 shadow-lg">
         <div class="container d-flex justify-content-center align-items-center">
           <div class="row row-cols-1">
             <div class="col d-flex justify-content-center">
               <a href="index.html#home">
-                <img class="rounded-lg-3" style="height: 48px;" src="assets/logo_01.png" alt="">
+                <img class="rounded-lg-3" style="height: 48px;" src="assets/logo/logo_01.png" alt="">
               </a>
             </div>
             <p class="col mb-0 text-body-secondary text-center">© 2023 Kape Para Sayo</p>

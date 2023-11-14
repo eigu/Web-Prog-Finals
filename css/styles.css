@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 body {
-    background-color: #181818 !important;
+    background-color: #333533 !important;
     font-family: 'Open Sans', sans-serif !important;
     padding: 0;
 }
@@ -10,8 +10,12 @@ body {
     margin-bottom: 0px;
 }
 
+.navbar-custom {
+    background-color: #F5CB5C;
+}
+
 footer {    
-    background-color: #FFFFFF;
+    background-color: #F5CB5C;
 }
 
 .home-img {
@@ -22,9 +26,13 @@ footer {
 }
 
 .hero {
-    background-color: #FFFFFF;
+    background-color: #E8EDDF;
 }
 
-.navbar-custom {
-    background-color: #FFFFFF;
+input {
+    max-width: 500px;
+}
+
+.form-small {
+    max-width: 100%;
 }
