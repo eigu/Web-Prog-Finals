@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2023 at 09:28 AM
+-- Generation Time: Nov 17, 2023 at 07:47 AM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,8 @@ CREATE TABLE `cart` (
 
 CREATE TABLE `products` (
   `item_id` int(11) NOT NULL,
-  `itemname` varchar(200) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `itemname` varchar(255) DEFAULT NULL,
   `description` text DEFAULT NULL,
   `quantity` int(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -51,8 +52,12 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`item_id`, `itemname`, `description`, `quantity`) VALUES
-(1, 'Aviator Glasses', 'Glasses', 20);
+INSERT INTO `products` (`item_id`, `image`, `itemname`, `description`, `quantity`) VALUES
+(1, 'singlebatangas_01', 'Batangas Single Origin Coffee', 'Batangas Arabica', 10),
+(2, 'singlebenguet_01', 'Benguet Single Origin Coffee', 'Benguet Arabica', 10),
+(3, 'singledavao_01', 'Davao Single Origin Coffee', 'Davao Arabica', 10),
+(4, 'singlekalinga_01', 'Kalinga Single Origin Coffee', 'Kalinga Robusta', 10),
+(5, 'singlesagada_01', 'Sagada Single Origin Coffee', 'Sagada Arabica', 10);
 
 -- --------------------------------------------------------
 
@@ -76,7 +81,7 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`user_id`, `username`, `password`, `firstname`, `lastname`, `mobile`, `address`, `email`) VALUES
-(1, 'jayyy', '1234567890', 'Jemanuel', 'Lasquite', '+639155955320', '519 Brentwood Mansion, Santolan', 'jemanuel.lasquite@ciit.edu.ph');
+(1, 'jay', 'jay', 'jay', 'jay', 'jay', 'jay', 'jay@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -118,13 +123,13 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
