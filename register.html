@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-md-6 col-lg-7 d-flex align-items-center">
                         <div class="card-body p-4 p-lg-5 text-black">
-                                <form name="frmContact" method="post" action="register.php" style="max-width: 540.2px; height: 500px;">
+                                <form name="frmContact" method="post" action="register.php" style="max-width: 540.2px; height: 500px;"  class="needs-validation was-validated" novalidate="">
                                     <a class="navbar-brand" href="index.html#home">
                                         <img class="rounded-lg-3 d-block mb-4"  style="height: 85px;" src="assets/logo/logo_01.png" alt="">
                                     </a>
@@ -31,17 +31,17 @@
                                     
                                     <div class="mb-4 pe-4" style="overflow-y: scroll; overflow-x: hidden; height: 300px;">
                                         <div class="form-outline mb-4">
-                                            <input class="form-control form-control-lg" type="email" id="email" name="email" />
+                                            <input class="form-control form-control-lg" type="email" id="email" name="email" required="">
                                             <label class="form-label" for="email">Email address</label>
                                         </div>
             
                                         <div class="form-outline mb-4">
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <input class="form-control form-control-lg form-small" type="username" id="username" name="username"/>
+                                                    <input class="form-control form-control-lg form-small" type="username" id="username" name="username" required="">
                                                 </div>
                                                 <div class="col-6">
-                                                    <input class="form-control form-control-lg form-small" type="password" id="password" name="password" />
+                                                    <input class="form-control form-control-lg form-small" type="password" id="password" name="password" required="">
                                                 </div>
                                                 <div class="col-6">
                                                     <label class="form-label" for="username">Username</label>
@@ -55,10 +55,10 @@
                                         <div class="form-outline mb-4">
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <input class="form-control form-control-lg form-small" type="firstname" id="firstname" name="firstname" />
+                                                    <input class="form-control form-control-lg form-small" type="firstname" id="firstname" name="firstname" required="">
                                                 </div>
                                                 <div class="col-6">
-                                                    <input class="form-control form-control-lg form-small" type="lastname" id="lastname" name="lastname" />
+                                                    <input class="form-control form-control-lg form-small" type="lastname" id="lastname" name="lastname" required="">
                                                 </div>
                                                 <div class="col-6">
                                                     <label class="form-label" for="firstname">First Name</label>
@@ -70,12 +70,12 @@
                                         </div>
             
                                         <div class="form-outline mb-4">
-                                            <input class="form-control form-control-lg" type="mobile" id="mobile" name="mobile" />
+                                            <input class="form-control form-control-lg" type="mobile" id="mobile" name="mobile" required="">
                                             <label class="form-label" for="mobile">Mobile</label>
                                         </div>
             
                                         <div class="form-outline">
-                                            <input class="form-control form-control-lg" type="address" id="address" name="address" />
+                                            <input class="form-control form-control-lg" type="address" id="address" name="address" required="">
                                             <label class="form-label" for="address">Address</label>
                                         </div>
                                     </div>
@@ -84,7 +84,7 @@
                                     <input class="btn btn-dark btn-lg btn-block" type="submit" name="Submit" id="Submit" value="Submit">
                                     </div>
         
-                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account? <a href="login.php" style="color: #393f81;">Login here</a></p>
+                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account? <a href="login.html" style="color: #393f81;">Login here</a></p>
                                 </form>
                         </div>
                     </div>
