@@ -8,7 +8,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
         echo '<script>
             alert("Login successful!");
-            window.location.href = "index.html";
+            window.location.href = "index.php";
         	</script>';
     } else {
         echo '<script>
@@ -30,7 +30,9 @@ function validateLogin($username, $password) {
 
     $user = $result->fetch_assoc();
 
-    if (!password_verify($password, $user['password'])) {
+    if ($password == $user['password']) {
+        return true;
+    } else {
         return false;
     }
 

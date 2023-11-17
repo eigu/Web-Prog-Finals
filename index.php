@@ -16,7 +16,7 @@
     <nav class="navbar navbar-custom navbar-expand-lg fixed-top navbar shadow-lg">
       <div class="container d-flex justify-content-between">
         <div class="col-lg-2 col d-flex justify-content-between justify-content-lg-start align-items-center">
-          <a class="navbar-brand" href="index.html#home">
+          <a class="navbar-brand" href="index.php#home">
             <img class="rounded-lg-3 d-block" style="height: 48px;" src="assets/logo/logo_01.png" alt="">
           </a>
           
@@ -28,16 +28,16 @@
         <div class="col-8 collapse navbar-collapse justify-content-center text-center" id="navbarCollapse">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="index.html#home">Home</a>
+              <a class="nav-link" href="index.php#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#about">About Us</a>
+              <a class="nav-link" href="index.php#about">About Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="products.php">Shop</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#contact">Contact Us</a>
+              <a class="nav-link" href="index.php#contact">Contact Us</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,7 +45,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">Orders</a></li>
-                <li><a class="dropdown-item" href="#">Account Details</a></li>
+                <li><a class="dropdown-item" href="profile.php">Account Details</a></li>
               </ul>
             </li>
           </ul>
@@ -118,7 +118,7 @@
         <div class="container d-flex justify-content-center align-items-center">
           <div class="row row-cols-1">
             <div class="col d-flex justify-content-center">
-              <a href="index.html#home">
+              <a href="index.php#home">
                 <img class="rounded-lg-3" style="height: 48px;" src="assets/logo/logo_01.png" alt="">
               </a>
             </div>

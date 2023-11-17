@@ -8,7 +8,7 @@ if (isset($_POST['email']) && isset($_POST['username']) && isset($_POST['passwor
 
 		echo '<script>
 			alert("Registration successful!");
-			window.location.href = "index.html";
+			window.location.href = "index.php";
 			</script>';
 	}
 }
