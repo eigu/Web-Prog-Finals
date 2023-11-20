@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2023 at 07:47 AM
+-- Generation Time: Nov 20, 2023 at 11:19 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -57,7 +57,12 @@ INSERT INTO `products` (`item_id`, `image`, `itemname`, `description`, `quantity
 (2, 'singlebenguet_01', 'Benguet Single Origin Coffee', 'Benguet Arabica', 10),
 (3, 'singledavao_01', 'Davao Single Origin Coffee', 'Davao Arabica', 10),
 (4, 'singlekalinga_01', 'Kalinga Single Origin Coffee', 'Kalinga Robusta', 10),
-(5, 'singlesagada_01', 'Sagada Single Origin Coffee', 'Sagada Arabica', 10);
+(5, 'singlesagada_01', 'Sagada Single Origin Coffee', 'Sagada Arabica', 10),
+(6, 'blendhouse_01', 'House Coffee Blend', 'Carefully crafted by our in-house experts for our signature taste!', 15),
+(7, 'blendespresso_01', 'Espresso Coffee Blend', 'Our signature Espresso blend for those mornings where you just need that extra oomph!', 20),
+(8, 'blenddecaf_01', 'Decaffeinated Coffee Blend', 'Still need to sleep tonight but badly craving your favorite beverage? We\'ve got something for you!', 30),
+(9, 'blenddark_01', 'Dark Coffee Blend', 'Darker roast with a deeper aroma!', 10),
+(10, 'blendlight_01', 'Light Coffee Blend', 'Lighter roast with a mellow aroma!', 15);
 
 -- --------------------------------------------------------
 
@@ -81,7 +86,8 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`user_id`, `username`, `password`, `firstname`, `lastname`, `mobile`, `address`, `email`) VALUES
-(1, 'jay', 'jay', 'jay', 'jay', 'jay', 'jay', 'jay@gmail.com');
+(1, 'jay', 'jay', 'jay', 'jay', 'jay', 'jay', 'jay@gmail.com'),
+(2, 'jay01', 'jay', 'jay', 'jay', 'jay', 'jay', 'jay01@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -123,13 +129,13 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
