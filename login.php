@@ -1,10 +1,20 @@
 <?php
-session_start ();
+session_start();
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
-    if (validateLogin($_POST['username'], $_POST['password'])) {
-        $_SESSION['login'] = "1";
-        $_SESSION['username'] = $_POST['username'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if (validateLogin($username, $password)) {
+        $_SESSION['login'] = "true";
+
+        $con = mysqli_connect('localhost', 'root', '','online_store');
+
+        $sql = "SELECT * FROM profile WHERE username = '$username'";
+        $result = mysqli_query($con, $sql);
+        $user = mysqli_fetch_assoc($result);
+
+        $_SESSION['user_id'] = $user['user_id'];
 
         echo '<script>
             alert("Login successful!");
@@ -20,15 +30,14 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 function validateLogin($username, $password) {
 	$con = mysqli_connect('localhost', 'root', '','online_store');
-    $query = "SELECT * FROM profile WHERE username='$username'";
 
-    $result = mysqli_query($con, $query);
+    $sql = "SELECT * FROM profile WHERE username='$username'";
+    $result = mysqli_query($con, $sql);
+    $user = $result->fetch_assoc();
 
     if ($result->num_rows == 0) {
         return false;
     }
-
-    $user = $result->fetch_assoc();
 
     if ($password == $user['password']) {
         return true;

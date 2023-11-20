@@ -1,3 +1,7 @@
+<?php
+session_start(); 
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -51,10 +55,23 @@
           </ul>
         </div>
 
-        <div class="col-2 collapse navbar-collapse text-center justify-content-end" id="navbarCollapse">
-          <button type="button" class="btn btn-outline-dark me-2" onclick="location.href='login.html'">Login</button>
+        <div class="col-1 collapse navbar-collapse text-center justify-content-end" id="navbarCollapse">
+          <?php
+          if (isset($_SESSION["login"])) {
+            
+          echo '<div class="col-2 collapse navbar-collapse text-center justify-content-end" id="navbarCollapse">
+              <button type="button" class="btn btn-outline-dark me-2"><a href="cart.php" style="text-decoration: none; color: #333533;">Cart</a></button>
+              <button type="button" class="btn btn-outline-dark me-2"><a href="logout.php" style="text-decoration: none; color: #333533;">Logout</a></button>
+              </div>';
+
+          } else {
+            
+          echo '<div class="col-2 collapse navbar-collapse text-center justify-content-end" id="navbarCollapse">
+                <button type="button" class="btn btn-outline-dark me-2"><a href="login.html" style="text-decoration: none; color: #333533;">Login</a></button>
+                </div>';
+          }
+          ?>
         </div>
-      </div>  
     </nav>
       
     <main class="container-fluid p-0">
@@ -99,19 +116,37 @@
       </div>
 
       <div id="contact" class="container d-flex flex-column min-vh-100 justify-content-md-start align-items-center">
-        <div class="row p-0 align-items-center rounded-3 shadow-lg w-75 my-auto hero">
-          <div class="col-lg-7 p-3 p-lg-5">
+        <div class="row p-0 align-items-center rounded-3 p-4 shadow-lg w-75 my-auto hero">
+          <div class="col-lg-5 p-3 p-lg-5">
               <h1 class="display-4 fw-bold lh-1">Contact Us</h1>
-              <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-              <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Primary</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
-              </div>
-            </div>
-            <div class="col-lg-5 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                <img class="rounded-lg-3" src="bootstrap-docs.png" alt="">
-            </div>
           </div>
+            
+          <div class="col-lg-7 p-0rounded-3">
+            <form method="post">
+              <div class="mb-3">
+                  <label for="name" class="form-label">Your Name:</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+
+              <div class="mb-3">
+                  <label for="email" class="form-label">Your Email:</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+
+              <div class="mb-3">
+                  <label for="subject" class="form-label">Subject:</label>
+                  <input type="text" class="form-control" id="subject" name="subject" required>
+              </div>
+
+              <div class="mb-3">
+                  <label for="message" class="form-label">Your Message:</label>
+                  <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-dark">Submit</button>
+            </form>
+          </div>
+        </div>
       </div>
 
       <footer class="py-3 shadow-lg">
